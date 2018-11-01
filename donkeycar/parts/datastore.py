@@ -187,6 +187,8 @@ class Tub(object):
 
         for key, val in data.items():
             typ = self.get_input_type(key)
+            if key == "angle" and data['user/model'] == "local_angle":
+                key = "user/angle"
 
             if typ in ['str', 'float', 'int', 'boolean']:
                 json_data[key] = val
