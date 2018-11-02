@@ -186,7 +186,7 @@ class Tub(object):
         json_data = {}
 
         for key, val in data.items():
-            if key == "angle":
+            if "angle" in key:
                 if 'user/mode' in data:
                     if data["user/model"] == "local_angle":
                         key = "user/angle"
