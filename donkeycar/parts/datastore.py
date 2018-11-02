@@ -60,7 +60,7 @@ class Tub(object):
 
             # patch
             inputs.remove("angle")
-            inputs.add("user/angle")
+            inputs.append("user/angle")
 
             # create log and save meta
             os.makedirs(self.path)
