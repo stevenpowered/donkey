@@ -57,6 +57,7 @@ class LocalWebController(tornado.web.Application):
             (r"/", tornado.web.RedirectHandler, dict(url="/drive")),
             (r"/drive", DriveAPI),
             (r"/video", VideoAPI),
+            (r"/recording", RecordingAPI),
             (r"/static/(.*)", tornado.web.StaticFileHandler, {"path": self.static_file_path}),
         ]
 
@@ -147,3 +148,10 @@ class VideoAPI(tornado.web.RequestHandler):
                 yield tornado.gen.Task(self.flush)
             else:
                 yield tornado.gen.Task(ioloop.add_timeout, ioloop.time() + interval)
+
+
+
+class RecordingAPI(tornado.web.RequestHandler):
+    def get(self):
+        data = {}
+        self.render("templates/vehicle.html", **data)
