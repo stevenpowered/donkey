@@ -60,8 +60,9 @@ class Tub(object):
             logger.info('Tub does NOT exist. Creating new tub...')
 
             # patch
-            inputs.remove("angle")
-            inputs.append("user/angle")
+            for i, item in enumerate(inputs):
+                if item == 'angle':
+                    inputs[i] = 'user/angle'
 
             # create log and save meta
             os.makedirs(self.path)
