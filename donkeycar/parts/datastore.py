@@ -188,7 +188,7 @@ class Tub(object):
         for key, val in data.items():
             if "angle" in key:
                 if 'user/mode' in data:
-                    if data["user/model"] == "local_angle":
+                    if data["user/mode"] == "local_angle":
                         key = "user/angle"
 
             typ = self.get_input_type(key)
