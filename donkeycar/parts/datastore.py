@@ -40,6 +40,7 @@ class Tub(object):
     """
 
     def __init__(self, path, inputs=None, types=None):
+        inputs = inputs.copy()
 
         self.path = os.path.expanduser(path)
         logger.info('path_in_tub: {}'.format(self.path))
