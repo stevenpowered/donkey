@@ -187,7 +187,7 @@ class Tub(object):
 
         for key, val in data.items():
             if key == "angle":
-                if 'user/model' in data:
+                if 'user/mode' in data:
                     if data["user/model"] == "local_angle":
                         key = "user/angle"
 
