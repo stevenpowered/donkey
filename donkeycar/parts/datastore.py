@@ -57,6 +57,11 @@ class Tub(object):
 
         elif not exists and inputs:
             logger.info('Tub does NOT exist. Creating new tub...')
+
+            # patch
+            inputs.remove("angle")
+            inputs.add("user/angle")
+
             # create log and save meta
             os.makedirs(self.path)
             self.meta = {'inputs': inputs, 'types': types}
